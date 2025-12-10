@@ -29,24 +29,22 @@ void updateDisplay(const SensorData& data) {
   if (page == 0) {
     // Page 1: AQI
     lcd.setCursor(0, 0);
-    lcd.print("PM2.5:");
+    lcd.print("PM2.5: ");
     lcd.print(data.aqi25);
-    lcd.print("g/m3");
 
     lcd.setCursor(0, 1);
-    lcd.print("PM10:");
+    lcd.print("PM10: ");
     lcd.print(data.aqi10);
-    lcd.print("g/m3");
   } else {
     // Page 2: Temp / Humidity
     lcd.setCursor(0, 0);
-    lcd.print("Temp:");
+    lcd.print("Temp: ");
     lcd.print(data.temp, 1);
     lcd.write(223); // degree symbol
     lcd.print("C");
 
     lcd.setCursor(0, 1);
-    lcd.print("Humi:");
+    lcd.print("Humi: ");
     lcd.print(data.humi, 1);
     lcd.print("%");
   }
